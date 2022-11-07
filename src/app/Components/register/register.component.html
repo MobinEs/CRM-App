@@ -1,0 +1,26 @@
+<body>
+
+    <div class="wrapper">
+      <div class="logo">
+        <img src="favicon.ico" alt="">
+      </div>
+      <div class="text-center mt-4 name">
+        CRM
+      </div>
+      <div class="p-3 mt-3">
+        <div class="form-field d-flex align-items-center">
+          <span class="far fa-user"></span>
+          <input type="text"
+            [(ngModel)]="register.cellphoneNumber" name="cellphoneNumber" id="cellphoneNumber" placeholder="Phone Number">
+        </div>
+        <div class="form-field d-flex align-items-center">
+          <span class="fas fa-key"></span>
+          <input type="password" value="" [(ngModel)]="register.password" name="password" id="pwd" placeholder="Password">
+        </div>
+        <button (click)="DoRegister()" class="btn mt-3">Register</button>
+      </div>
+      <div class="text-center fs-6">
+        <a href="/login">Log in</a>
+      </div>
+    </div>
+  </body>

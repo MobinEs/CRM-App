@@ -1,0 +1,33 @@
+<h5 class="font-weight-bold mb-3 text-center text-white">Details</h5>
+<div style="overflow-x:auto; max-height:500px;">
+    <ul class="list-unstyled text-white">
+        <li *ngFor="let item of Details" class="d-flex justify-content-between mb-4">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
+                class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
+            <div class="card mask-custom">
+                <div class="card-header d-flex justify-content-between p-3"
+                    style="border-bottom: 1px solid rgba(255,255,255,.3);">
+                    <p class="fw-bold mb-0">{{item.senderName}}</p>
+                    <p class="text-light small mb-0"><i class="far fa-clock"></i> 12 mins ago</p>
+                </div>
+                <div class="card-body">
+                    <p class="mb-0">
+                        {{item.description}}
+                    </p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="form-outline form-white row">
+    <form (ngSubmit)="DoCreate($event.target)">
+        <div class="col-md-10">
+            <textarea [(ngModel)]="create.description" name="description" placeholder="Message" class="form-control"
+                id="textAreaExample3" rows="3"></textarea>
+            <input [(ngModel)]="ticketid" type="text" name="ticketId" hidden>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-light btn-lg btn-rounded float-end form-control">Send</button>
+        </div>
+    </form>
+</div>
