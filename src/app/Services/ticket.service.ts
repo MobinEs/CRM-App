@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Create } from '../Models/Ticket/create.model';
 import { GetData } from '../Models/Ticket/get-data.model';
+import { Refer } from '../Models/Ticket/refer.model';
 import { TicketDetail } from '../Models/TicketDetail/ticket-detail.model';
 import { BaseService } from '../Shared/base-service.service';
 
@@ -45,19 +46,26 @@ export class TicketService extends BaseService {
     if (this.ResponseObject.isSuccessFul) {
       ticketdetails = JSON.parse(this.ResponseObject.data);
     }
-    console.log(ticketdetails);
     return ticketdetails;
   }
 
-
-
-  public async Create(model: Create, file: any) {
+  public async Create(form: any) {
 
     this.ResponseObject =
-      await this.PostByFile("Ticket/Create", file);
+      await this.PostByFile("Ticket/Create", form);
 
 
     if (this.ResponseObject.isSuccessFul) {
     }
   }
+
+  public async Refer(model: Refer) {
+
+    this.ResponseObject =
+      await this.Post("Ticket/Refer", model);
+
+    if (this.ResponseObject.isSuccessFul) {
+    }
+  }
+
 }

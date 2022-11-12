@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { GetData } from 'src/app/Models/Ticket/get-data.model';
 import { TicketService } from 'src/app/Services/ticket.service';
 import { ChatboxComponent } from '../../TicketDetail/chatbox/chatbox.component';
@@ -12,7 +13,8 @@ export class IndexComponent implements OnInit {
 
   protected tickets: GetData[] = [];
   protected myTickets: GetData[] = [];
-  constructor(private service: TicketService) { }
+  constructor(private service: TicketService,
+    private modalService: NgbModal) { }
 
   public SelectedTicket: string = "";
 
@@ -20,6 +22,11 @@ export class IndexComponent implements OnInit {
     this.GetTickets();
     this.GetMyTickets();
   }
+
+  openVerticallyCentered(content: any) {
+    this.modalService.open(content, { centered: true });
+  }
+
 
   protected async GetTickets() {
     this.tickets = await this.service.GetAll();

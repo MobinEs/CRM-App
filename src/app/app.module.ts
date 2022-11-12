@@ -18,7 +18,9 @@ import { LowerCaseUrlSerializer } from './Shared/lower-case-url-serializer';
 import { UrlSerializer } from '@angular/router';
 import { IndexComponent } from './Components/Ticket/index/index.component';
 import { CreateComponent } from './Components/Ticket/create/create.component';
-import { ChatboxComponent } from './Components/TicketDetail/chatbox/chatbox.component'
+import { ChatboxComponent } from './Components/TicketDetail/chatbox/chatbox.component';
+import { ReferComponent } from './Components/Ticket/refer/refer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { ChatboxComponent } from './Components/TicketDetail/chatbox/chatbox.comp
     RegisterComponent,
     IndexComponent,
     CreateComponent,
-    ChatboxComponent
+    ChatboxComponent,
+    ReferComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ import { ChatboxComponent } from './Components/TicketDetail/chatbox/chatbox.comp
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     }),
+    NgbModule,
   ],
   providers: [
     { provide: ToastrService, useClass: ToastrService },

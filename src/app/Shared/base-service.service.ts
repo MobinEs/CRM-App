@@ -15,8 +15,8 @@ export abstract class BaseService {
 
   protected ResponseObject: Response = new Response();
 
-  private BaseUrl: string = "https://localhost:7104/api/v1/";
-  //private BaseUrl: string = "https://crmserver.taklearning.ir/api/v1/";
+  //private BaseUrl: string = "https://localhost:7104/api/v1/";
+  private BaseUrl: string = "https://crmserver.taklearning.ir/api/v1/";
   private ApiKey: string = "FD5607F6-9CCE-476C-9091-060A0B0F661B";
 
   // private BaseUrl: string = "http://localhost/api/v1/";

@@ -28,11 +28,6 @@ export class CreateComponent implements OnInit {
 
   public SelectedTicket: string = '';
 
-
-  // public myform: FormGroup = new FormGroup(
-  //   { description: new FormControl("", Validators.required) });
-
-
   constructor(private service: TicketService,
     private depservice: DepartmentService,
     private serservice: ServiceService,
@@ -59,9 +54,9 @@ export class CreateComponent implements OnInit {
     }
   }
 
-  protected DoCreate(event: any) {
+  protected DoCreate(form: any) {
     this.model.isActive = true;
-    this.service.Create(this.model, event);
+    this.service.Create(form);
 
   }
   protected SelectTicket(input: string) {

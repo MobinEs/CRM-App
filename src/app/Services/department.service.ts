@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Department } from '../Models/Department/department.model';
 import { Service } from '../Models/Service/service.model';
+import { User } from '../Models/User/user.model';
 import { BaseService } from '../Shared/base-service.service';
 
 @Injectable({
@@ -28,6 +29,17 @@ export class DepartmentService extends BaseService {
     }
 
     return Departmets;
+  }
+
+  public async GetUserByDep(id: string): Promise<User[]> {
+    var users: User[] = [];
+    this.ResponseObject = await
+      this.GET('Department/DepartmentsUser?departmentId=' + id);
+
+    if (this.ResponseObject.isSuccessFul) {
+      users = JSON.parse(this.ResponseObject.data);
+    }
+    return users;
   }
 
 }
