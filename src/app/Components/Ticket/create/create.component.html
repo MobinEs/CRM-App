@@ -7,7 +7,7 @@
         <div>
           <span class="far fa-user">دپارتمان</span>
           <select class="form-control" id="departmentId" name="departmentId" [(ngModel)]="model.departmentId" required>
-            <option value="0">لطفا یکی از گزینه های زیر را انتخاب کنید</option>
+            <option value="null">لطفا یکی از گزینه های زیر را انتخاب کنید</option>
             <option *ngFor="let department of Departments" value="{{ department.id }}">{{ department.name }}</option>
           </select>
         </div>
@@ -17,7 +17,7 @@
         <div>
           <span class="far fa-user">اولویت</span>
           <select class="form-control" id="priorityId" name="priorityId" [(ngModel)]="model.priorityId" required>
-            <option value="0">لطفا یکی از گزینه های زیر را انتخاب کنید</option>
+            <option value="null">لطفا یکی از گزینه های زیر را انتخاب کنید</option>
             <option *ngFor="let priority of Priorities" value="{{ priority.id }}">{{ priority.name }}</option>
           </select>
         </div>
@@ -27,7 +27,7 @@
         <div>
           <span class="far fa-user">سرویس</span>
           <select class="form-control" id="serviceId" name="serviceId" [(ngModel)]="model.serviceId" required>
-            <option value="0">لطفا یکی از گزینه های زیر را انتخاب کنید</option>
+            <option value="null">لطفا یکی از گزینه های زیر را انتخاب کنید</option>
             <option *ngFor="let service of Services" value="{{ service.id }}">{{ service.name }}</option>
           </select>
         </div>
@@ -37,7 +37,7 @@
         <div>
           <span class="far fa-user">نوع تیکت</span>
           <select class="form-control" id="ticketTypeId" name="ticketTypeId" [(ngModel)]="model.ticketTypeId" required>
-            <option value="0">لطفا یکی از گزینه های زیر را انتخاب کنید</option>
+            <option value="null">لطفا یکی از گزینه های زیر را انتخاب کنید</option>
             <option *ngFor="let ticketType of TicketTypes" value="{{ ticketType.id }}">{{ ticketType.name }}</option>
           </select>
         </div>
@@ -46,7 +46,7 @@
 
         <div class="form-field d-flex align-items-center">
           <span class="far fa-user">title</span> &nbsp;
-          <input type="text" required [(ngModel)]="model.title" name="title" id="title" placeholder="Title">
+          <input type="text" required [(ngModel)]="model.title" name="title" id="title" placeholder="Title">          
         </div>
 
         <br>

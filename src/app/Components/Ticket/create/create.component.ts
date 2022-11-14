@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Department } from 'src/app/Models/Department/department.model';
 import { Priority } from 'src/app/Models/Priority/priority.model';
 import { Service } from 'src/app/Models/Service/service.model';
@@ -50,12 +49,12 @@ export class CreateComponent implements OnInit {
   public onFileChange(event: any) {
     if (event.target.files && event.target.files.length) {
       this.file = event.target.files[0];
-      //this.file = event;
     }
   }
 
   protected DoCreate(form: any) {
     this.model.isActive = true;
+
     this.service.Create(form);
 
   }

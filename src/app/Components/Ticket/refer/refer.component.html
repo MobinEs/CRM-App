@@ -1,44 +1,99 @@
-<ng-template #content let-modal>
-    <div class="modal-header">
-        <h4 class="modal-title">Modal title</h4>
-        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">ارجاع</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="wrapper text-center">
+
+          <form class="form-inline" (ngSubmit)="Refer()">            
+            <div>
+              <span class="far fa-user">دپارتمان</span>
+              <select (change)="GetUserByDep()" class="form-control" id="departmentId" name="departmentId"
+                [(ngModel)]="model.departmentId" required>
+                <option value="null">لطفا یکی از گزینه های زیر را انتخاب کنید</option>
+                <option *ngFor="let department of departments" value="{{ department.id }}">{{
+                  department.name }}
+                </option>
+              </select>
+            </div>
+
+            <br>
+            <div>
+              <span class="far fa-user">کاربر</span>
+              <select class="form-control" id="receiverId" name="receiverId" [(ngModel)]="model.receiverId" required>
+                <option value="null">لطفا یکی از گزینه های زیر را انتخاب کنید</option>
+                <option *ngFor="let user of users" value="{{ user.userId }}">{{ user.fullName }}
+                </option>
+              </select>
+            </div>
+
+            <hr>
+
+            <input class="btn btn-primary" type="submit" value="Refer">
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+  </div>
+</div>
+
+
+
+
+
+
+<!--
+ <ng-template #content let-modal>
+   <div class="modal-header">
+     <h4 class="modal-title">Modal title</h4>
+     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
     <div class="modal-body">
-
-        <div class="container py-5 align-items-center">
+      
+      <div class="container py-5 align-items-center">
             <div class="wrapper text-center">
-
-                <form class="form-inline" (ngSubmit)="Refer()">
-
-                    <div>
-                        <span class="far fa-user">دپارتمان</span>
-                        <select onchange="GetUserByDep()" class="form-control" id="departmentId" name="departmentId"
-                            [(ngModel)]="model.departmentId" required>
-                            <option value="0">لطفا یکی از گزینه های زیر را انتخاب کنید</option>
-                            <option *ngFor="let department of departments" value="{{ department.id }}">{{
-                                department.name }}
-                            </option>
-                        </select>
-                    </div>
-
-                    <br>
-                    <div>
-                        <span class="far fa-user">دپارتمان</span>
-                        <select class="form-control" id="receiverId" name="receiverId" [(ngModel)]="model.receiverId"
-                            required>
-                            <option value="0">لطفا یکی از گزینه های زیر را انتخاب کنید</option>
+              
+              <form class="form-inline" (ngSubmit)="Refer()">
+                
+                <div>
+                  <span class="far fa-user">دپارتمان</span>
+                  <select onchange="GetUserByDep()" class="form-control" id="departmentId" name="departmentId"
+                  [(ngModel)]="model.departmentId" required>
+                  <option value="0">لطفا یکی از گزینه های زیر را انتخاب کنید</option>
+                  <option *ngFor="let department of departments" value="{{ department.id }}">{{
+                    department.name }}
+                  </option>
+                </select>
+              </div>
+              
+              <br>
+              <div>
+                <span class="far fa-user">دپارتمان</span>
+                <select class="form-control" id="receiverId" name="receiverId" [(ngModel)]="model.receiverId"
+                required>
+                <option value="0">لطفا یکی از گزینه های زیر را انتخاب کنید</option>
                             <option *ngFor="let user of users" value="{{ user.userId }}">{{ user.fullName }}
                             </option>
                         </select>
-                    </div>
-
-                    <input class="btn" type="submit" value="Refer">
-                </form>
-            </div>
-        </div>
-
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
-    </div>
-</ng-template>
+                      </div>
+                      
+                      <input class="btn" type="submit" value="Refer">
+                    </form>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+              </div> 
+            </ng-template> 
+          -->

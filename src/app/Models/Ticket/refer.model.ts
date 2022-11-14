@@ -1,8 +1,8 @@
 export class Refer {
-    ticketId: string = '';
+    ticketId: any = null;
 
-    receiverId: string = '';
+    receiverId: any = null;
 
-    departmentId: string = '';
+    departmentId: any = null;
 
 }

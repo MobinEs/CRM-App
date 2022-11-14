@@ -3,11 +3,11 @@ export class Create {
     isActive: boolean = true;
 
     expireDateTime: string = new Date().toISOString();
-    serviceId: string = '0';
-    ticketTypeId: string = '0';
-    priorityId: string = '0';
+    serviceId: any = null;
+    ticketTypeId: any = null;
+    priorityId: any = null;
     title: string = '';
     description: string = '';
-    departmentId: string = '0';
+    departmentId: any = null;
     file: any;
 }

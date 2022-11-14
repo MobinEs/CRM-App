@@ -18,9 +18,11 @@ export class ChatboxComponent implements OnInit {
     return this._ticketid;
   }
   @Input()
-  public set ticketid(v: string) {
-    this._ticketid = v;
-    this.resetData();
+  public set ticketid(val: string) {
+    this._ticketid = val;
+    if (val != '') {
+      this.resetData();
+    }
   }
   public Details: TicketDetail[] = [];
 
