@@ -14,6 +14,14 @@
                     <p class="mb-0">
                         {{item.description}}
                     </p>
+                    <hr />
+                    <div *ngIf="item.filePath != null">
+                        <p class="mb-0">
+                            <img alt width="200px" height="200px"
+                                src="http://localhost/App_Data_Public/Images/{{item.filePath[0]}}">
+
+                        </p>
+                    </div>
                 </div>
             </div>
         </li>

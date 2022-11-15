@@ -1,6 +1,6 @@
 export class TicketDetail {
 
-    filePath: string = "";
+    filePath: string[] = [];
     title: string = "";
     description: string = "";
     ticketId: string = "";

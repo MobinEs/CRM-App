@@ -36,7 +36,7 @@ export class ChatboxComponent implements OnInit {
   }
 
   public async resetData() {
-    this.Details = await this.service.GetTicketDetail(this.ticketid);
+    this.Details = await this.service.GetTicketDetail(this.ticketid);    
     this.create.description = "";
   }
 

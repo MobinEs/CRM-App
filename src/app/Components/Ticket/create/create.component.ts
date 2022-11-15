@@ -24,7 +24,7 @@ export class CreateComponent implements OnInit {
   protected Services: Service[] = [];
   protected TicketTypes: TicketType[] = [];
 
-
+  protected IsValidForm: boolean = false;
   public SelectedTicket: string = '';
 
   constructor(private service: TicketService,
@@ -51,7 +51,37 @@ export class CreateComponent implements OnInit {
       this.file = event.target.files[0];
     }
   }
+  public Validate() {
 
+    if (this.model.departmentId == null ||
+      this.model.departmentId == 'null') {
+      this.IsValidForm = false;
+      return;
+    }
+    if (this.model.priorityId == null ||
+      this.model.priorityId == 'null') {
+      this.IsValidForm = false;
+      return;
+    }
+    if (this.model.serviceId == null ||
+      this.model.serviceId == 'null') {
+      this.IsValidForm = false;
+      return;
+    }
+    if (this.model.ticketTypeId == null ||
+      this.model.ticketTypeId == 'null') {
+      this.IsValidForm = false;
+      return;
+    }
+    if (this.model.title == null ||
+      this.model.title == "" ||
+      this.model.title == " ") {
+      this.IsValidForm = false;
+      return;
+    }
+
+    this.IsValidForm = true;
+  }
   protected DoCreate(form: any) {
     this.model.isActive = true;
 

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Create } from '../Models/Ticket/create.model';
 import { GetData } from '../Models/Ticket/get-data.model';
@@ -12,7 +13,9 @@ import { BaseService } from '../Shared/base-service.service';
 })
 export class TicketService extends BaseService {
 
-  constructor(http: HttpClient, toast: ToastrService) {
+
+  constructor(http: HttpClient, toast: ToastrService
+    , private router: Router) {
     super(http, toast);
   }
 
@@ -56,6 +59,7 @@ export class TicketService extends BaseService {
 
 
     if (this.ResponseObject.isSuccessFul) {
+      this.router.navigate(['/ticket']);
     }
   }
 
