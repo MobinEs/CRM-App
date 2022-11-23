@@ -29,7 +29,7 @@ export class ChatboxComponent implements OnInit {
 
   public create: Create = new Create();
 
-  constructor(private service: TicketService,
+  constructor(public service: TicketService,
     private detailService: TicketDetailService) { }
 
   ngOnInit(): void {
@@ -37,7 +37,7 @@ export class ChatboxComponent implements OnInit {
 
   public async resetData() {
     this.Details = await this.service.GetTicketDetail(this.ticketid);    
-    this.create.description = "";
+    this.create.description = "";    
   }
 
   public async DoCreate(event: any) {

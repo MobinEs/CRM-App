@@ -12,15 +12,18 @@ import { AuthenticateStatus } from './authenticate-status.model';
 // })
 
 export abstract class BaseService {
-
+  public href: string = "https://crmserver.taklearning.ir";
   protected ResponseObject: Response = new Response();
 
-  //private BaseUrl: string = "https://localhost:7104/api/v1/";
-  //private BaseUrl: string = "https://crmserver.taklearning.ir/api/v1/";
-  //private ApiKey: string = "FD5607F6-9CCE-476C-9091-060A0B0F661B";
 
-  private BaseUrl: string = "http://localhost/api/v1/";
-  private ApiKey: string = "7153002d-3e4e-4b9b-acbb-2478af444b1f";
+  private BaseUrl: string = "https://localhost:7104/api/v1/";
+  private ApiKey: string = "FD5607F6-9CCE-476C-9091-060A0B0F661B";
+
+  //private BaseUrl: string = "https://crmserver.taklearning.ir/api/v1/";
+  //private ApiKey: string = "5848f9e6-cb72-4c42-859b-41094f78ab7d";
+
+  //private BaseUrl: string = "http://localhost/api/v1/";
+  //private ApiKey: string = "7153002d-3e4e-4b9b-acbb-2478af444b1f";
   constructor(
     private http: HttpClient,
     protected toast: ToastrService) { }
@@ -33,6 +36,7 @@ export abstract class BaseService {
       'Api-Key': this.ApiKey,
       'Authorization': 'Bearer ' + token
     };
+
     return new HttpHeaders(head);
   }
 
